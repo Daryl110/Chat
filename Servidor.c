@@ -6,8 +6,8 @@
 #include <arpa/inet.h>  // Libreria para definiciones de operaciones de internet
 #include <netinet/in.h> // Libreria de protocolos y estandares (Familias de protocolos)
 #include <netdb.h>      // Libreria para definiciones de operaciones de base de datos de red
-#include <sys/types.h>
-#include <resolv.h>
+#include <sys/types.h>  // Libreria para definiciones de algunas estructuras requeridas
+#include <resolv.h>     // Libreria para resolucion de algunas rutinas
 
 typedef struct // Fragmento de Codigo tomado de https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_C/Sockets --Modificado
 {
@@ -147,6 +147,9 @@ int main(int argc, char const **argv)
             }
         }
     }
+
+    close(conexionServidor);// Cierre de conexion
+    return EXIT_SUCCESS;
 }
 
 /**
